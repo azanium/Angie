@@ -13,6 +13,7 @@ target 'Angie' do
   pod 'SCLAlertView'
   pod 'SwiftyJSON'
   pod 'JTMaterialSpinner'
+  pod 'SwiftyXML'
   pod 'DGElasticPullToRefresh', :git => 'https://github.com/azanium/DGElasticPullToRefresh.git', :branch => 'master'
 
   target 'AngieTests' do
