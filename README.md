@@ -10,4 +10,5 @@ The architecture is using VIP (View Interactor Presenter) with clean-swift.com t
 # Unit Testing
 The unit testing is using boundary unit testing as described on clean-swift.com
 
-
+# Git branching model
+http://nvie.com/posts/a-successful-git-branching-model/
