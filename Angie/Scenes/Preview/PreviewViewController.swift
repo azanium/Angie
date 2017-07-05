@@ -23,7 +23,12 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
     var interactor: PreviewBusinessLogic?
     var router: (NSObjectProtocol & PreviewRoutingLogic & PreviewDataPassing)?
     
+    // MARK: - Outlets
     @IBOutlet weak var previewImageView: UIImageView!
+    
+    // MARK: - MemVars & Props
+    
+    var displayedPhoto = FlickrPhoto()
     
     // MARK: Object lifecycle
     
@@ -86,10 +91,10 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
     
     func displayPhoto(viewModel: Preview.Photo.ViewModel)
     {
-        let photo = viewModel.photo
-        let url = URL(string: photo.media.m)!
+        self.displayedPhoto = viewModel.photo
+        let url = URL(string: self.displayedPhoto.media.m)!
         
-        let resource = ImageResource(downloadURL: url, cacheKey: photo.media.m)
+        let resource = ImageResource(downloadURL: url, cacheKey: self.displayedPhoto.media.m)
         previewImageView.kf.indicatorType = .activity
         previewImageView.kf.setImage(with: resource)
     }

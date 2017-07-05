@@ -85,8 +85,8 @@ class GalleryPresenterTests: XCTestCase
             XCTAssertEqual(photo.link, "link", "Displaying fetched photo should have correct link")
             XCTAssertEqual(photo.media.m, media.m, "Displaying fetched photo should have correct media")
             XCTAssertEqual(photo.published, date, "Displaying fetched photo should have correct published date")
-            XCTAssertEqual(photo.tags, "tags", "Displaying fetched photo should have correct date")
-            XCTAssertEqual(photo.title, "title", "Displaying fetched photo should have correct date")
+            XCTAssertEqual(photo.tags, "tags", "Displaying fetched photo should have correct tags")
+            XCTAssertEqual(photo.title, "title", "Displaying fetched photo should have correct title")
         }
     }
 }
