@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol PreviewDisplayLogic: class
 {
@@ -21,6 +22,8 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
 {
     var interactor: PreviewBusinessLogic?
     var router: (NSObjectProtocol & PreviewRoutingLogic & PreviewDataPassing)?
+    
+    @IBOutlet weak var previewImageView: UIImageView!
     
     // MARK: Object lifecycle
     
@@ -69,19 +72,25 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        loadPhoto()
     }
     
-    // MARK: Do something
+    // MARK: Event
     
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func loadPhoto(link: String)
+    func loadPhoto()
     {
-        let request = Preview.Photo.Request(link: link)
+        let request = Preview.Photo.Request()
         interactor?.loadPhoto(request: request)
     }
     
     func displayPhoto(viewModel: Preview.Photo.ViewModel)
     {
+        let photo = viewModel.photo
+        let url = URL(string: photo.media.m)!
+        
+        let resource = ImageResource(downloadURL: url, cacheKey: photo.media.m)
+        previewImageView.kf.indicatorType = .activity
+        previewImageView.kf.setImage(with: resource)
     }
 }

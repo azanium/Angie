@@ -25,7 +25,7 @@ class PreviewPresenter: PreviewPresentationLogic
     
     func presentPhoto(response: Preview.Photo.Response)
     {
-        let viewModel = Preview.Photo.ViewModel()
+        let viewModel = Preview.Photo.ViewModel(photo: response.photo)
         viewController?.displayPhoto(viewModel: viewModel)
     }
 }

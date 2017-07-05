@@ -20,17 +20,16 @@ enum Preview
     {
         struct Request
         {
-            var link: String = ""
         }
         
         struct Response
         {
-            var link: String = ""
+            var photo: FlickrPhoto
         }
         
         struct ViewModel
         {
-            var link: String = ""
+            var photo: FlickrPhoto
         }
     }
 }

@@ -31,7 +31,6 @@ class GalleryWorker
                 
                 if let jsonValue = response.result.value {
                     
-                    print("response: \(jsonValue)")
                     let json = JSON(jsonValue)
                     
                     

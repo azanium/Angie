@@ -112,18 +112,24 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GalleryPhotoCell
         
         let photo = self.displayedPhotos[indexPath.row]
         
         let url = URL(string: photo.media.m)!
         
         let resource = ImageResource(downloadURL: url, cacheKey: photo.media.m)
-        //cell.photoView.kf.indicatorType = .activity
-        //cell.photoView.kf.setImage(with: resource)
+        cell.photoView.kf.indicatorType = .activity
+        cell.photoView.kf.setImage(with: resource)
         
         // Configure the cell
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = self.displayedPhotos[indexPath.row]
+        
+        router?.routeToPreview(photo: photo as AnyObject, segue: nil)
     }
     
     // MARK: Gallery Events

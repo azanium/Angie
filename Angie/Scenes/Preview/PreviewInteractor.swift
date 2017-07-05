@@ -19,20 +19,20 @@ protocol PreviewBusinessLogic
 
 protocol PreviewDataStore
 {
-    //var name: String { get set }
+    var photo: FlickrPhoto { get set }
 }
 
 class PreviewInteractor: PreviewBusinessLogic, PreviewDataStore
 {
     var presenter: PreviewPresentationLogic?
     var worker = PreviewWorker()
-    //var name: String = ""
+    var photo = FlickrPhoto()
     
     // MARK: Do something
     
     func loadPhoto(request: Preview.Photo.Request)
     {
-        let response = Preview.Photo.Response()
+        let response = Preview.Photo.Response(photo: photo)
         presenter?.presentPhoto(response: response)
     }
 }

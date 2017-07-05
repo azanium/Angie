@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol GalleryRoutingLogic
 {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToPreview(photo: AnyObject, segue: UIStoryboardSegue?)
 }
 
 protocol GalleryDataPassing
@@ -29,32 +29,36 @@ class GalleryRouter: NSObject, GalleryRoutingLogic, GalleryDataPassing
     
     // MARK: Routing
     
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
+    func routeToPreview(photo: AnyObject, segue: UIStoryboardSegue? = nil)
+    {
+        if let segue = segue
+        {
+            let destinationVC = segue.destination as! PreviewViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToPreview(photo: photo as! FlickrPhoto, destination: &destinationDS)
+        }
+        else
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "PreviewViewController") as! PreviewViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToPreview(photo: photo as! FlickrPhoto, destination: &destinationDS)
+            navigateToPreview(source: viewController!, destination: destinationVC)
+        }
+    }
     
     // MARK: Navigation
     
-    //func navigateToSomewhere(source: GalleryViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
+    func navigateToPreview(source: GalleryViewController, destination: PreviewViewController)
+    {
+        source.show(destination, sender: nil)
+    }
+    
     
     // MARK: Passing data
     
-    //func passDataToSomewhere(source: GalleryDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
+    func passDataToPreview(photo: FlickrPhoto, destination: inout PreviewDataStore)
+    {
+        destination.photo = photo
+    }
 }

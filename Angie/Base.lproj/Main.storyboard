@@ -13,7 +13,7 @@
         <scene sceneID="yLh-qQ-XNu">
             <objects>
                 <collectionViewController storyboardIdentifier="GalleryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="66r-77-y5r" customClass="GalleryViewController" customModule="Angie" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="e6o-Qa-Ys6">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="e6o-Qa-Ys6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,6 +60,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWs-XA-QHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1596" y="138.98050974512745"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="HnU-KY-5ap">
+            <objects>
+                <viewController storyboardIdentifier="PreviewViewController" id="pju-Jn-4HA" customClass="PreviewViewController" customModule="Angie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mOB-YD-lOa"/>
+                        <viewControllerLayoutGuide type="bottom" id="k9M-ra-KDH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1e6-JA-OFd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WCO-fh-jxk">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WCO-fh-jxk" secondAttribute="trailing" id="E2K-ah-vLc"/>
+                            <constraint firstItem="WCO-fh-jxk" firstAttribute="top" secondItem="mOB-YD-lOa" secondAttribute="bottom" id="Ugp-ng-wgy"/>
+                            <constraint firstItem="k9M-ra-KDH" firstAttribute="top" secondItem="WCO-fh-jxk" secondAttribute="bottom" id="bE2-7Y-wym"/>
+                            <constraint firstItem="WCO-fh-jxk" firstAttribute="leading" secondItem="1e6-JA-OFd" secondAttribute="leading" id="dAm-5O-K0J"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewImageView" destination="WCO-fh-jxk" id="jRd-n9-OXD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3M6-rW-jQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2454" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JET-KY-B0b">
