@@ -16,16 +16,21 @@ enum Preview
 {
     // MARK: Use cases
     
-    enum Something
+    enum Photo
     {
         struct Request
         {
+            var link: String = ""
         }
+        
         struct Response
         {
+            var link: String = ""
         }
+        
         struct ViewModel
         {
+            var link: String = ""
         }
     }
 }

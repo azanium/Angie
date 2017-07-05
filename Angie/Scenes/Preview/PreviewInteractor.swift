@@ -14,7 +14,7 @@ import UIKit
 
 protocol PreviewBusinessLogic
 {
-    func doSomething(request: Preview.Something.Request)
+    func loadPhoto(request: Preview.Photo.Request)
 }
 
 protocol PreviewDataStore
@@ -25,17 +25,14 @@ protocol PreviewDataStore
 class PreviewInteractor: PreviewBusinessLogic, PreviewDataStore
 {
     var presenter: PreviewPresentationLogic?
-    var worker: PreviewWorker?
+    var worker = PreviewWorker()
     //var name: String = ""
     
     // MARK: Do something
     
-    func doSomething(request: Preview.Something.Request)
+    func loadPhoto(request: Preview.Photo.Request)
     {
-        worker = PreviewWorker()
-        worker?.doSomeWork()
-        
-        let response = Preview.Something.Response()
-        presenter?.presentSomething(response: response)
+        let response = Preview.Photo.Response()
+        presenter?.presentPhoto(response: response)
     }
 }

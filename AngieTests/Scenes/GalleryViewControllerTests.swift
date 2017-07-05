@@ -94,10 +94,10 @@ class GalleryViewControllerTests: XCTestCase
         let viewModel = Gallery.Photo.ViewModel(success: true, photos: photos)
         
         // When
-        sut.presentPhotos(viewModel: viewModel)
+        sut.displayPhotos(viewModel: viewModel)
         
         // Then
-        XCTAssert(collectionViewSpy.reloadDataCalled, "Presenting fetched photos should reload the collection view")
+        XCTAssert(collectionViewSpy.reloadDataCalled, "Displaying fetched photos should reload the collection view")
     }
     
     func testNumberOfSectionsInCollectionViewShouldAlwaysBeOne()
@@ -119,7 +119,7 @@ class GalleryViewControllerTests: XCTestCase
         let testPresentedPhotos = [
             FlickrPhoto()
         ]
-        sut.presentedPhotos = testPresentedPhotos
+        sut.displayedPhotos = testPresentedPhotos
         
         // When
         let numberOfRows = sut.collectionView(collectionView!, numberOfItemsInSection: 0)

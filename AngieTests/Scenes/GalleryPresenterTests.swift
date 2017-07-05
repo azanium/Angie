@@ -43,20 +43,20 @@ class GalleryPresenterTests: XCTestCase
     
     class GalleryDisplayLogicSpy: GalleryDisplayLogic
     {
-        var presentPhotosCalled = false
+        var displayPhotosCalled = false
         
         var viewModel: Gallery.Photo.ViewModel!
         
-        func presentPhotos(viewModel: Gallery.Photo.ViewModel)
+        func displayPhotos(viewModel: Gallery.Photo.ViewModel)
         {
-            presentPhotosCalled = true
+            displayPhotosCalled = true
             self.viewModel = viewModel
         }
     }
     
     // MARK: Tests
     
-    func testPresentFetchPhotosShouldFormatFetchedPhotosForPresentation()
+    func testDisplayFetchPhotosShouldFormatFetchedPhotosForPresentation()
     {
         // Given
         let galleryDisplayLogicSpy = GalleryDisplayLogicSpy()
@@ -76,17 +76,17 @@ class GalleryPresenterTests: XCTestCase
         sut.presentPhotos(response: response)
         
         // Then
-        let presentedPhotos = galleryDisplayLogicSpy.viewModel.photos
-        for photo in presentedPhotos {
-            XCTAssertEqual(photo.author, "author", "Presenting fetched photo should have correct author")
-            XCTAssertEqual(photo.authorId, "authorId", "Presenting fetched photo should have correct author Id")
-            XCTAssertEqual(photo.dateTaken, date, "Presenting fetched photo should have correct date")
-            XCTAssertEqual(photo.description, "desc", "Presenting fetched photo should have correct description")
-            XCTAssertEqual(photo.link, "link", "Presenting fetched photo should have correct link")
-            XCTAssertEqual(photo.media.m, media.m, "Presenting fetched photo should have correct media")
-            XCTAssertEqual(photo.published, date, "Presenting fetched photo should have correct published date")
-            XCTAssertEqual(photo.tags, "tags", "Presenting fetched photo should have correct date")
-            XCTAssertEqual(photo.title, "title", "Presenting fetched photo should have correct date")
+        let displayedPhotos = galleryDisplayLogicSpy.viewModel.photos
+        for photo in displayedPhotos {
+            XCTAssertEqual(photo.author, "author", "Displaying fetched photo should have correct author")
+            XCTAssertEqual(photo.authorId, "authorId", "Displaying fetched photo should have correct author Id")
+            XCTAssertEqual(photo.dateTaken, date, "Displaying fetched photo should have correct date")
+            XCTAssertEqual(photo.description, "desc", "Displaying fetched photo should have correct description")
+            XCTAssertEqual(photo.link, "link", "Displaying fetched photo should have correct link")
+            XCTAssertEqual(photo.media.m, media.m, "Displaying fetched photo should have correct media")
+            XCTAssertEqual(photo.published, date, "Displaying fetched photo should have correct published date")
+            XCTAssertEqual(photo.tags, "tags", "Displaying fetched photo should have correct date")
+            XCTAssertEqual(photo.title, "title", "Displaying fetched photo should have correct date")
         }
     }
 }

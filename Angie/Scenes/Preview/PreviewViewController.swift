@@ -14,7 +14,7 @@ import UIKit
 
 protocol PreviewDisplayLogic: class
 {
-    func displaySomething(viewModel: Preview.Something.ViewModel)
+    func displayPhoto(viewModel: Preview.Photo.ViewModel)
 }
 
 class PreviewViewController: UIViewController, PreviewDisplayLogic
@@ -69,21 +69,19 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
     }
     
     // MARK: Do something
     
     //@IBOutlet weak var nameTextField: UITextField!
     
-    func doSomething()
+    func loadPhoto(link: String)
     {
-        let request = Preview.Something.Request()
-        interactor?.doSomething(request: request)
+        let request = Preview.Photo.Request(link: link)
+        interactor?.loadPhoto(request: request)
     }
     
-    func displaySomething(viewModel: Preview.Something.ViewModel)
+    func displayPhoto(viewModel: Preview.Photo.ViewModel)
     {
-        //nameTextField.text = viewModel.name
     }
 }

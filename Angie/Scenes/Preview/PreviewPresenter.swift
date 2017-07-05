@@ -14,7 +14,7 @@ import UIKit
 
 protocol PreviewPresentationLogic
 {
-    func presentSomething(response: Preview.Something.Response)
+    func presentPhoto(response: Preview.Photo.Response)
 }
 
 class PreviewPresenter: PreviewPresentationLogic
@@ -23,9 +23,9 @@ class PreviewPresenter: PreviewPresentationLogic
     
     // MARK: Do something
     
-    func presentSomething(response: Preview.Something.Response)
+    func presentPhoto(response: Preview.Photo.Response)
     {
-        let viewModel = Preview.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+        let viewModel = Preview.Photo.ViewModel()
+        viewController?.displayPhoto(viewModel: viewModel)
     }
 }

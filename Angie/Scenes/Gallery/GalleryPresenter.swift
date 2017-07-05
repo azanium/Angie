@@ -26,6 +26,6 @@ class GalleryPresenter: GalleryPresentationLogic
     func presentPhotos(response: Gallery.Photo.Response)
     {
         let viewModel = Gallery.Photo.ViewModel(success: response.success, photos: response.photos)
-        viewController?.presentPhotos(viewModel: viewModel)
+        viewController?.displayPhotos(viewModel: viewModel)
     }
 }

@@ -17,7 +17,7 @@ import Kingfisher
 
 protocol GalleryDisplayLogic: class
 {
-    func presentPhotos(viewModel: Gallery.Photo.ViewModel)
+    func displayPhotos(viewModel: Gallery.Photo.ViewModel)
 }
 
 class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
@@ -34,7 +34,7 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     fileprivate let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     
     private let spinner = ALThreeCircleSpinner(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-    var presentedPhotos = [FlickrPhoto]()
+    var displayedPhotos = [FlickrPhoto]()
     
     
     // MARK: Object lifecycle
@@ -108,13 +108,13 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.presentedPhotos.count
+        return self.displayedPhotos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! UICollectionViewCell
         
-        let photo = self.presentedPhotos[indexPath.row]
+        let photo = self.displayedPhotos[indexPath.row]
         
         let url = URL(string: photo.media.m)!
         
@@ -138,11 +138,11 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     
     
     // Present the photos sent from the presenter
-    func presentPhotos(viewModel: Gallery.Photo.ViewModel)
+    func displayPhotos(viewModel: Gallery.Photo.ViewModel)
     {
         spinner.stopAnimating()
         
-        self.presentedPhotos = viewModel.photos
+        self.displayedPhotos = viewModel.photos
         
         self.collectionView?.reloadData()
     }
