@@ -14,7 +14,7 @@ import UIKit
 
 protocol GalleryPresentationLogic
 {
-    func presentSomething(response: Gallery.Photo.Response)
+    func presentPhotos(response: Gallery.Photo.Response)
 }
 
 class GalleryPresenter: GalleryPresentationLogic
@@ -23,9 +23,9 @@ class GalleryPresenter: GalleryPresentationLogic
     
     // MARK: Do something
     
-    func presentSomething(response: Gallery.Photo.Response)
+    func presentPhotos(response: Gallery.Photo.Response)
     {
-        let viewModel = Gallery.Photo.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+        let viewModel = Gallery.Photo.ViewModel(success: response.success, photos: response.photos)
+        viewController?.presentPhotos(viewModel: viewModel)
     }
 }

@@ -12,8 +12,7 @@ target 'Angie' do
   pod 'Hue'
   pod 'SCLAlertView'
   pod 'SwiftyJSON'
-  pod 'JTMaterialSpinner'
-  pod 'SwiftyXML'
+  pod 'ALThreeCircleSpinner'
   pod 'DGElasticPullToRefresh', :git => 'https://github.com/azanium/DGElasticPullToRefresh.git', :branch => 'master'
 
   target 'AngieTests' do

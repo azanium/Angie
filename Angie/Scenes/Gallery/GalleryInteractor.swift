@@ -14,28 +14,35 @@ import UIKit
 
 protocol GalleryBusinessLogic
 {
-    func doSomething(request: Gallery.Photo.Request)
+    func fetchPhotos(request: Gallery.Photo.Request)
 }
 
 protocol GalleryDataStore
 {
-    //var name: String { get set }
+    var photos: [FlickrPhoto] { get }
 }
 
 class GalleryInteractor: GalleryBusinessLogic, GalleryDataStore
 {
     var presenter: GalleryPresentationLogic?
     var worker: GalleryWorker?
-    //var name: String = ""
+    
+    var photos: [FlickrPhoto] = []
     
     // MARK: Do something
     
-    func doSomething(request: Gallery.Photo.Request)
+    func fetchPhotos(request: Gallery.Photo.Request)
     {
         worker = GalleryWorker()
-        worker?.doSomeWork()
+        worker?.fetchPhotos(completionHandler: { (success, photos) in
+            
+            self.photos = photos
+            
+            let response = Gallery.Photo.Response(success: success, photos: photos)
+            self.presenter?.presentPhotos(response: response)
+            
+        })
         
-        let response = Gallery.Photo.Response()
-        presenter?.presentSomething(response: response)
+        
     }
 }

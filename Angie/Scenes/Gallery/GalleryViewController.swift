@@ -11,16 +11,31 @@
 //
 
 import UIKit
+import ALThreeCircleSpinner
+import SnapKit
+import Kingfisher
 
 protocol GalleryDisplayLogic: class
 {
-    func displaySomething(viewModel: Gallery.Photo.ViewModel)
+    func presentPhotos(viewModel: Gallery.Photo.ViewModel)
 }
 
-class GalleryViewController: UIViewController, GalleryDisplayLogic
+class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
 {
     var interactor: GalleryBusinessLogic?
     var router: (NSObjectProtocol & GalleryRoutingLogic & GalleryDataPassing)?
+    
+    // MARK: MemVars & Properties
+    
+    private let cellIdentifier = "Cell"
+    
+    // Photos and Gallery margins
+    fileprivate let photosPerRow: CGFloat = 3
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    
+    private let spinner = ALThreeCircleSpinner(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+    private var photos = [FlickrPhoto]()
+    
     
     // MARK: Object lifecycle
     
@@ -52,6 +67,17 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic
         router.dataStore = interactor
     }
     
+    // Setup the spinner for loading indicator here
+    private func setupSpinner() {
+        collectionView?.addSubview(spinner)
+        spinner.snp.remakeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.width.equalTo(44)
+            make.height.equalTo(44)
+        }
+    }
+    
     // MARK: Routing
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -69,21 +95,78 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
+        
+        setupSpinner()
+        
+        loadPhotos()
     }
     
-    // MARK: Do something
+    // MARK: - UICollectionView Data Source and Delegate
     
-    //@IBOutlet weak var nameTextField: UITextField!
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
-    func doSomething()
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.photos.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GalleryPhotoCell
+        
+        let photo = self.photos[indexPath.row]
+        
+        let url = URL(string: photo.media.m)!
+        
+        let resource = ImageResource(downloadURL: url, cacheKey: photo.media.m)
+        cell.photoView.kf.indicatorType = .activity
+        cell.photoView.kf.setImage(with: resource)
+        
+        // Configure the cell
+        return cell
+    }
+    
+    // MARK: Gallery Events
+    
+    func loadPhotos()
     {
+        spinner.startAnimating()
+        
         let request = Gallery.Photo.Request()
-        interactor?.doSomething(request: request)
+        interactor?.fetchPhotos(request: request)
     }
     
-    func displaySomething(viewModel: Gallery.Photo.ViewModel)
+    
+    // Present the photos sent from the presenter
+    func presentPhotos(viewModel: Gallery.Photo.ViewModel)
     {
-        //nameTextField.text = viewModel.name
+        spinner.stopAnimating()
+        
+        self.photos = viewModel.photos
+        
+        self.collectionView?.reloadData()
+    }
+}
+
+// Adjust the insets and item size for the gallery with flow layout delegate
+
+extension GalleryViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let paddingSpace = sectionInsets.left * (photosPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / photosPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return sectionInsets.left
     }
 }

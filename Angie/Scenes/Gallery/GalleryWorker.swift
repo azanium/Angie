@@ -11,10 +11,97 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class GalleryWorker
 {
-    func doSomeWork()
+    typealias GalleryFetchPhotosHandler = (Bool, [FlickrPhoto])->Void
+    
+    func fetchPhotos(completionHandler: GalleryFetchPhotosHandler?)
     {
+        let apiUrl = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tagmode=any"
+        
+        request(apiUrl,
+                method: .get,
+                parameters: [:],
+                encoding: JSONEncoding.default,
+                headers: nil).responseJSON
+            { (response) in
+                
+                if let jsonValue = response.result.value {
+                    
+                    print("response: \(jsonValue)")
+                    let json = JSON(jsonValue)
+                    
+                    
+                    if let stat = json["stat"].string {
+                        if stat == "fail" {
+                            completionHandler?(false, [])
+                            return
+                        }
+                    }
+                    
+                    var photos = [FlickrPhoto]()
+                    if let items = json["items"].array {
+                        
+                        for item in items {
+                            
+                            var photo = FlickrPhoto()
+                            
+                            if let title = item["title"].string {
+                                photo.title = title
+                            }
+                            
+                            if let link = item["link"].string {
+                                photo.link = link
+                            }
+                            
+                            let media = item["media"]
+                            var fMedia = FlickrMedia()
+                                
+                            if let m = media["m"].string {
+                                fMedia.m = m
+                            }
+                            photo.media = fMedia
+                            
+                            
+                            if let dateTaken = item["date_taken"].string {
+                                
+                            }
+                            
+                            if let desc = item["description"].string {
+                                photo.description = desc
+                            }
+                            
+                            if let published = item["published"].string {
+                                //photo.published = published
+                            }
+                            
+                            if let author = item["author"].string {
+                                photo.author = author
+                            }
+                            
+                            if let authorId = item["author_id"].string {
+                                photo.authorId = authorId
+                            }
+                            
+                            if let tags = item["tags"].string {
+                                photo.tags = tags
+                            }
+                            
+                            photos += [photo]
+                            
+                        }
+                        
+                    }
+                    
+                    completionHandler?(true, photos)
+                    
+                }
+                else {
+                    completionHandler?(false, [])
+                }
+        }
     }
 }
