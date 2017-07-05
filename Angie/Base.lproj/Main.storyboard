@@ -12,8 +12,8 @@
         <!--Gallery-->
         <scene sceneID="yLh-qQ-XNu">
             <objects>
-                <collectionViewController id="66r-77-y5r" customClass="GalleryViewController" customModule="Angie" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="e6o-Qa-Ys6">
+                <collectionViewController storyboardIdentifier="GalleryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="66r-77-y5r" customClass="GalleryViewController" customModule="Angie" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="e6o-Qa-Ys6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

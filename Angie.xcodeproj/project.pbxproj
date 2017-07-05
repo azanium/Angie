@@ -12,39 +12,14 @@
 		C1970C8B1F0B5858001ECDFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1970C8A1F0B5858001ECDFE /* Assets.xcassets */; };
 		C1970C8E1F0B5858001ECDFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1970C8C1F0B5858001ECDFE /* LaunchScreen.storyboard */; };
 		C1970C991F0B5858001ECDFE /* AngieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970C981F0B5858001ECDFE /* AngieTests.swift */; };
-		C1970CA41F0B5858001ECDFE /* AngieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CA31F0B5858001ECDFE /* AngieUITests.swift */; };
 		C1970CD31F0BF5E8001ECDFE /* GalleryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CCD1F0BF5E8001ECDFE /* GalleryInteractor.swift */; };
-		C1970CD41F0BF5E8001ECDFE /* GalleryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CCD1F0BF5E8001ECDFE /* GalleryInteractor.swift */; };
-		C1970CD51F0BF5E8001ECDFE /* GalleryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CCD1F0BF5E8001ECDFE /* GalleryInteractor.swift */; };
 		C1970CD61F0BF5E8001ECDFE /* GalleryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CCE1F0BF5E8001ECDFE /* GalleryModels.swift */; };
-		C1970CD71F0BF5E8001ECDFE /* GalleryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CCE1F0BF5E8001ECDFE /* GalleryModels.swift */; };
-		C1970CD81F0BF5E8001ECDFE /* GalleryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CCE1F0BF5E8001ECDFE /* GalleryModels.swift */; };
 		C1970CD91F0BF5E8001ECDFE /* GalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CCF1F0BF5E8001ECDFE /* GalleryPresenter.swift */; };
-		C1970CDA1F0BF5E8001ECDFE /* GalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CCF1F0BF5E8001ECDFE /* GalleryPresenter.swift */; };
-		C1970CDB1F0BF5E8001ECDFE /* GalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CCF1F0BF5E8001ECDFE /* GalleryPresenter.swift */; };
 		C1970CDC1F0BF5E8001ECDFE /* GalleryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CD01F0BF5E8001ECDFE /* GalleryRouter.swift */; };
-		C1970CDD1F0BF5E8001ECDFE /* GalleryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CD01F0BF5E8001ECDFE /* GalleryRouter.swift */; };
-		C1970CDE1F0BF5E8001ECDFE /* GalleryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CD01F0BF5E8001ECDFE /* GalleryRouter.swift */; };
 		C1970CDF1F0BF5E8001ECDFE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CD11F0BF5E8001ECDFE /* GalleryViewController.swift */; };
-		C1970CE01F0BF5E8001ECDFE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CD11F0BF5E8001ECDFE /* GalleryViewController.swift */; };
-		C1970CE11F0BF5E8001ECDFE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CD11F0BF5E8001ECDFE /* GalleryViewController.swift */; };
 		C1970CE21F0BF5E8001ECDFE /* GalleryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CD21F0BF5E8001ECDFE /* GalleryWorker.swift */; };
-		C1970CE31F0BF5E8001ECDFE /* GalleryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CD21F0BF5E8001ECDFE /* GalleryWorker.swift */; };
-		C1970CE41F0BF5E8001ECDFE /* GalleryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CD21F0BF5E8001ECDFE /* GalleryWorker.swift */; };
 		C1970CE61F0CBD95001ECDFE /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CE51F0CBD95001ECDFE /* FlickrPhoto.swift */; };
-		C1970CE71F0CBD95001ECDFE /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CE51F0CBD95001ECDFE /* FlickrPhoto.swift */; };
-		C1970CE81F0CBD95001ECDFE /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CE51F0CBD95001ECDFE /* FlickrPhoto.swift */; };
 		C1970CEE1F0CBE1A001ECDFE /* FlickrMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CED1F0CBE1A001ECDFE /* FlickrMedia.swift */; };
-		C1970CEF1F0CBE1A001ECDFE /* FlickrMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CED1F0CBE1A001ECDFE /* FlickrMedia.swift */; };
-		C1970CF01F0CBE1A001ECDFE /* FlickrMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CED1F0CBE1A001ECDFE /* FlickrMedia.swift */; };
-		C1970CF71F0CD54C001ECDFE /* GalleryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CF21F0CD54C001ECDFE /* GalleryInteractorTests.swift */; };
-		C1970CF81F0CD54C001ECDFE /* GalleryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CF21F0CD54C001ECDFE /* GalleryInteractorTests.swift */; };
-		C1970CFA1F0CD54C001ECDFE /* GalleryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CF31F0CD54C001ECDFE /* GalleryPresenterTests.swift */; };
-		C1970CFB1F0CD54C001ECDFE /* GalleryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CF31F0CD54C001ECDFE /* GalleryPresenterTests.swift */; };
-		C1970CFD1F0CD54C001ECDFE /* GalleryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CF41F0CD54C001ECDFE /* GalleryViewControllerTests.swift */; };
-		C1970CFE1F0CD54C001ECDFE /* GalleryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CF41F0CD54C001ECDFE /* GalleryViewControllerTests.swift */; };
-		C1970D001F0CD54C001ECDFE /* GalleryWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CF51F0CD54C001ECDFE /* GalleryWorkerTests.swift */; };
-		C1970D011F0CD54C001ECDFE /* GalleryWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970CF51F0CD54C001ECDFE /* GalleryWorkerTests.swift */; };
 		C1970D041F0D1A34001ECDFE /* GalleryPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970D031F0D1A34001ECDFE /* GalleryPhotoCell.swift */; };
 		C1970D0C1F0D1C4F001ECDFE /* PreviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970D061F0D1C4E001ECDFE /* PreviewInteractor.swift */; };
 		C1970D0D1F0D1C4F001ECDFE /* PreviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970D061F0D1C4E001ECDFE /* PreviewInteractor.swift */; };
@@ -58,20 +33,16 @@
 		C1970D151F0D1C4F001ECDFE /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970D0A1F0D1C4F001ECDFE /* PreviewViewController.swift */; };
 		C1970D161F0D1C4F001ECDFE /* PreviewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970D0B1F0D1C4F001ECDFE /* PreviewWorker.swift */; };
 		C1970D171F0D1C4F001ECDFE /* PreviewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970D0B1F0D1C4F001ECDFE /* PreviewWorker.swift */; };
-		CFC81386D337E7BF5CC29BCD /* Pods_AngieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68192EA3F1B73144DCAE2CB /* Pods_AngieUITests.framework */; };
+		C1970D1D1F0D1E19001ECDFE /* GalleryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970D191F0D1E19001ECDFE /* GalleryInteractorTests.swift */; };
+		C1970D1E1F0D1E19001ECDFE /* GalleryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970D1A1F0D1E19001ECDFE /* GalleryPresenterTests.swift */; };
+		C1970D1F1F0D1E19001ECDFE /* GalleryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970D1B1F0D1E19001ECDFE /* GalleryViewControllerTests.swift */; };
+		C1970D211F0D275C001ECDFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1970C871F0B5858001ECDFE /* Main.storyboard */; };
 		E50CEBB2C656D22D1241E255 /* Pods_AngieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E627615A29881BC979F16C /* Pods_AngieTests.framework */; };
 		F5541999F182D7C8D0C63EC6 /* Pods_Angie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137A70192E6AAFF889C05F6F /* Pods_Angie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		C1970C951F0B5858001ECDFE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1970C781F0B5858001ECDFE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C1970C7F1F0B5858001ECDFE;
-			remoteInfo = Angie;
-		};
-		C1970CA01F0B5858001ECDFE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C1970C781F0B5858001ECDFE /* Project object */;
 			proxyType = 1;
@@ -96,9 +67,6 @@
 		C1970C941F0B5858001ECDFE /* AngieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AngieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1970C981F0B5858001ECDFE /* AngieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngieTests.swift; sourceTree = "<group>"; };
 		C1970C9A1F0B5858001ECDFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1970C9F1F0B5858001ECDFE /* AngieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AngieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1970CA31F0B5858001ECDFE /* AngieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngieUITests.swift; sourceTree = "<group>"; };
-		C1970CA51F0B5858001ECDFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1970CCD1F0BF5E8001ECDFE /* GalleryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryInteractor.swift; sourceTree = "<group>"; };
 		C1970CCE1F0BF5E8001ECDFE /* GalleryModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryModels.swift; sourceTree = "<group>"; };
 		C1970CCF1F0BF5E8001ECDFE /* GalleryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryPresenter.swift; sourceTree = "<group>"; };
@@ -107,10 +75,6 @@
 		C1970CD21F0BF5E8001ECDFE /* GalleryWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryWorker.swift; sourceTree = "<group>"; };
 		C1970CE51F0CBD95001ECDFE /* FlickrPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrPhoto.swift; path = Models/FlickrPhoto.swift; sourceTree = "<group>"; };
 		C1970CED1F0CBE1A001ECDFE /* FlickrMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrMedia.swift; path = Models/FlickrMedia.swift; sourceTree = "<group>"; };
-		C1970CF21F0CD54C001ECDFE /* GalleryInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryInteractorTests.swift; path = Gallery/GalleryInteractorTests.swift; sourceTree = "<group>"; };
-		C1970CF31F0CD54C001ECDFE /* GalleryPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryPresenterTests.swift; path = Gallery/GalleryPresenterTests.swift; sourceTree = "<group>"; };
-		C1970CF41F0CD54C001ECDFE /* GalleryViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryViewControllerTests.swift; path = Gallery/GalleryViewControllerTests.swift; sourceTree = "<group>"; };
-		C1970CF51F0CD54C001ECDFE /* GalleryWorkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryWorkerTests.swift; path = Gallery/GalleryWorkerTests.swift; sourceTree = "<group>"; };
 		C1970D031F0D1A34001ECDFE /* GalleryPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryPhotoCell.swift; sourceTree = "<group>"; };
 		C1970D061F0D1C4E001ECDFE /* PreviewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewInteractor.swift; path = Scenes/Preview/PreviewInteractor.swift; sourceTree = "<group>"; };
 		C1970D071F0D1C4F001ECDFE /* PreviewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewModels.swift; path = Scenes/Preview/PreviewModels.swift; sourceTree = "<group>"; };
@@ -118,6 +82,9 @@
 		C1970D091F0D1C4F001ECDFE /* PreviewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewRouter.swift; path = Scenes/Preview/PreviewRouter.swift; sourceTree = "<group>"; };
 		C1970D0A1F0D1C4F001ECDFE /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewViewController.swift; path = Scenes/Preview/PreviewViewController.swift; sourceTree = "<group>"; };
 		C1970D0B1F0D1C4F001ECDFE /* PreviewWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewWorker.swift; path = Scenes/Preview/PreviewWorker.swift; sourceTree = "<group>"; };
+		C1970D191F0D1E19001ECDFE /* GalleryInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryInteractorTests.swift; sourceTree = "<group>"; };
+		C1970D1A1F0D1E19001ECDFE /* GalleryPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryPresenterTests.swift; sourceTree = "<group>"; };
+		C1970D1B1F0D1E19001ECDFE /* GalleryViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewControllerTests.swift; sourceTree = "<group>"; };
 		D5BCB840D8325C052BF98676 /* Pods-AngieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AngieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AngieTests/Pods-AngieTests.release.xcconfig"; sourceTree = "<group>"; };
 		D68192EA3F1B73144DCAE2CB /* Pods_AngieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AngieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E627615A29881BC979F16C /* Pods_AngieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AngieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,14 +107,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1970C9C1F0B5858001ECDFE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CFC81386D337E7BF5CC29BCD /* Pods_AngieUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -166,7 +125,6 @@
 			children = (
 				C1970C821F0B5858001ECDFE /* Angie */,
 				C1970C971F0B5858001ECDFE /* AngieTests */,
-				C1970CA21F0B5858001ECDFE /* AngieUITests */,
 				C1970C811F0B5858001ECDFE /* Products */,
 				EF1830B9E65B2D837D3E4610 /* Pods */,
 				2CEDB6372B3AE86C09DD03FB /* Frameworks */,
@@ -178,7 +136,6 @@
 			children = (
 				C1970C801F0B5858001ECDFE /* Angie.app */,
 				C1970C941F0B5858001ECDFE /* AngieTests.xctest */,
-				C1970C9F1F0B5858001ECDFE /* AngieUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,20 +158,11 @@
 		C1970C971F0B5858001ECDFE /* AngieTests */ = {
 			isa = PBXGroup;
 			children = (
-				C1970CF11F0CD4FE001ECDFE /* Gallery */,
+				C1970D181F0D1E19001ECDFE /* Scenes */,
 				C1970C981F0B5858001ECDFE /* AngieTests.swift */,
 				C1970C9A1F0B5858001ECDFE /* Info.plist */,
 			);
 			path = AngieTests;
-			sourceTree = "<group>";
-		};
-		C1970CA21F0B5858001ECDFE /* AngieUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C1970CA31F0B5858001ECDFE /* AngieUITests.swift */,
-				C1970CA51F0B5858001ECDFE /* Info.plist */,
-			);
-			path = AngieUITests;
 			sourceTree = "<group>";
 		};
 		C1970CB11F0BF523001ECDFE /* Scenes */ = {
@@ -257,17 +205,6 @@
 			path = Scenes/Gallery;
 			sourceTree = "<group>";
 		};
-		C1970CF11F0CD4FE001ECDFE /* Gallery */ = {
-			isa = PBXGroup;
-			children = (
-				C1970CF21F0CD54C001ECDFE /* GalleryInteractorTests.swift */,
-				C1970CF31F0CD54C001ECDFE /* GalleryPresenterTests.swift */,
-				C1970CF41F0CD54C001ECDFE /* GalleryViewControllerTests.swift */,
-				C1970CF51F0CD54C001ECDFE /* GalleryWorkerTests.swift */,
-			);
-			name = Gallery;
-			sourceTree = "<group>";
-		};
 		C1970D051F0D1C2F001ECDFE /* Preview */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +216,16 @@
 				C1970D0B1F0D1C4F001ECDFE /* PreviewWorker.swift */,
 			);
 			name = Preview;
+			sourceTree = "<group>";
+		};
+		C1970D181F0D1E19001ECDFE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C1970D191F0D1E19001ECDFE /* GalleryInteractorTests.swift */,
+				C1970D1A1F0D1E19001ECDFE /* GalleryPresenterTests.swift */,
+				C1970D1B1F0D1E19001ECDFE /* GalleryViewControllerTests.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		EF1830B9E65B2D837D3E4610 /* Pods */ = {
@@ -338,27 +285,6 @@
 			productReference = C1970C941F0B5858001ECDFE /* AngieTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C1970C9E1F0B5858001ECDFE /* AngieUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C1970CAE1F0B5858001ECDFE /* Build configuration list for PBXNativeTarget "AngieUITests" */;
-			buildPhases = (
-				01DCC70A540B1B3468136D1A /* [CP] Check Pods Manifest.lock */,
-				C1970C9B1F0B5858001ECDFE /* Sources */,
-				C1970C9C1F0B5858001ECDFE /* Frameworks */,
-				C1970C9D1F0B5858001ECDFE /* Resources */,
-				6896A1848EFA009BCAEDD74F /* [CP] Embed Pods Frameworks */,
-				281A0421962AF720BED4CC7A /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C1970CA11F0B5858001ECDFE /* PBXTargetDependency */,
-			);
-			name = AngieUITests;
-			productName = AngieUITests;
-			productReference = C1970C9F1F0B5858001ECDFE /* AngieUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -375,12 +301,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					C1970C931F0B5858001ECDFE = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = RDGPYC8K4P;
-						ProvisioningStyle = Automatic;
-						TestTargetID = C1970C7F1F0B5858001ECDFE;
-					};
-					C1970C9E1F0B5858001ECDFE = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = RDGPYC8K4P;
 						ProvisioningStyle = Automatic;
@@ -403,7 +323,6 @@
 			targets = (
 				C1970C7F1F0B5858001ECDFE /* Angie */,
 				C1970C931F0B5858001ECDFE /* AngieTests */,
-				C1970C9E1F0B5858001ECDFE /* AngieUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -423,49 +342,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1970C9D1F0B5858001ECDFE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				C1970D211F0D275C001ECDFE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01DCC70A540B1B3468136D1A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		281A0421962AF720BED4CC7A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AngieUITests/Pods-AngieUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		287C46B2116EB913E2E121DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,21 +392,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Angie/Pods-Angie-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6896A1848EFA009BCAEDD74F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AngieUITests/Pods-AngieUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7B12901C0CB3FC3922D28F79 /* [CP] Check Pods Manifest.lock */ = {
@@ -602,44 +470,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1970C991F0B5858001ECDFE /* AngieTests.swift in Sources */,
+				C1970D1D1F0D1E19001ECDFE /* GalleryInteractorTests.swift in Sources */,
+				C1970D1F1F0D1E19001ECDFE /* GalleryViewControllerTests.swift in Sources */,
 				C1970D0D1F0D1C4F001ECDFE /* PreviewInteractor.swift in Sources */,
-				C1970CF71F0CD54C001ECDFE /* GalleryInteractorTests.swift in Sources */,
-				C1970CFD1F0CD54C001ECDFE /* GalleryViewControllerTests.swift in Sources */,
 				C1970D0F1F0D1C4F001ECDFE /* PreviewModels.swift in Sources */,
 				C1970D171F0D1C4F001ECDFE /* PreviewWorker.swift in Sources */,
-				C1970CE71F0CBD95001ECDFE /* FlickrPhoto.swift in Sources */,
-				C1970CEF1F0CBE1A001ECDFE /* FlickrMedia.swift in Sources */,
-				C1970CDA1F0BF5E8001ECDFE /* GalleryPresenter.swift in Sources */,
-				C1970CFA1F0CD54C001ECDFE /* GalleryPresenterTests.swift in Sources */,
-				C1970CD41F0BF5E8001ECDFE /* GalleryInteractor.swift in Sources */,
 				C1970D131F0D1C4F001ECDFE /* PreviewRouter.swift in Sources */,
-				C1970CDD1F0BF5E8001ECDFE /* GalleryRouter.swift in Sources */,
 				C1970D111F0D1C4F001ECDFE /* PreviewPresenter.swift in Sources */,
-				C1970CE01F0BF5E8001ECDFE /* GalleryViewController.swift in Sources */,
-				C1970D001F0CD54C001ECDFE /* GalleryWorkerTests.swift in Sources */,
-				C1970CE31F0BF5E8001ECDFE /* GalleryWorker.swift in Sources */,
-				C1970CD71F0BF5E8001ECDFE /* GalleryModels.swift in Sources */,
+				C1970D1E1F0D1E19001ECDFE /* GalleryPresenterTests.swift in Sources */,
 				C1970D151F0D1C4F001ECDFE /* PreviewViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1970C9B1F0B5858001ECDFE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1970CA41F0B5858001ECDFE /* AngieUITests.swift in Sources */,
-				C1970CF81F0CD54C001ECDFE /* GalleryInteractorTests.swift in Sources */,
-				C1970CFE1F0CD54C001ECDFE /* GalleryViewControllerTests.swift in Sources */,
-				C1970CE81F0CBD95001ECDFE /* FlickrPhoto.swift in Sources */,
-				C1970CF01F0CBE1A001ECDFE /* FlickrMedia.swift in Sources */,
-				C1970CDB1F0BF5E8001ECDFE /* GalleryPresenter.swift in Sources */,
-				C1970CFB1F0CD54C001ECDFE /* GalleryPresenterTests.swift in Sources */,
-				C1970CD51F0BF5E8001ECDFE /* GalleryInteractor.swift in Sources */,
-				C1970CDE1F0BF5E8001ECDFE /* GalleryRouter.swift in Sources */,
-				C1970CE11F0BF5E8001ECDFE /* GalleryViewController.swift in Sources */,
-				C1970D011F0CD54C001ECDFE /* GalleryWorkerTests.swift in Sources */,
-				C1970CE41F0BF5E8001ECDFE /* GalleryWorker.swift in Sources */,
-				C1970CD81F0BF5E8001ECDFE /* GalleryModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,11 +489,6 @@
 			isa = PBXTargetDependency;
 			target = C1970C7F1F0B5858001ECDFE /* Angie */;
 			targetProxy = C1970C951F0B5858001ECDFE /* PBXContainerItemProxy */;
-		};
-		C1970CA11F0B5858001ECDFE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C1970C7F1F0B5858001ECDFE /* Angie */;
-			targetProxy = C1970CA01F0B5858001ECDFE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -833,36 +667,6 @@
 			};
 			name = Release;
 		};
-		C1970CAF1F0B5858001ECDFE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 749EA6F26E019DD0D1AF2B5F /* Pods-AngieUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = RDGPYC8K4P;
-				INFOPLIST_FILE = AngieUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.azacode.AngieUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Angie;
-			};
-			name = Debug;
-		};
-		C1970CB01F0B5858001ECDFE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42FB1791ED1534C4494346D7 /* Pods-AngieUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = RDGPYC8K4P;
-				INFOPLIST_FILE = AngieUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.azacode.AngieUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Angie;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -889,15 +693,6 @@
 			buildConfigurations = (
 				C1970CAC1F0B5858001ECDFE /* Debug */,
 				C1970CAD1F0B5858001ECDFE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C1970CAE1F0B5858001ECDFE /* Build configuration list for PBXNativeTarget "AngieUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C1970CAF1F0B5858001ECDFE /* Debug */,
-				C1970CB01F0B5858001ECDFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

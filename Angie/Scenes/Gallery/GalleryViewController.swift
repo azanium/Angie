@@ -34,7 +34,7 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     fileprivate let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     
     private let spinner = ALThreeCircleSpinner(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-    private var photos = [FlickrPhoto]()
+    var presentedPhotos = [FlickrPhoto]()
     
     
     // MARK: Object lifecycle
@@ -108,19 +108,19 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.photos.count
+        return self.presentedPhotos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GalleryPhotoCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! UICollectionViewCell
         
-        let photo = self.photos[indexPath.row]
+        let photo = self.presentedPhotos[indexPath.row]
         
         let url = URL(string: photo.media.m)!
         
         let resource = ImageResource(downloadURL: url, cacheKey: photo.media.m)
-        cell.photoView.kf.indicatorType = .activity
-        cell.photoView.kf.setImage(with: resource)
+        //cell.photoView.kf.indicatorType = .activity
+        //cell.photoView.kf.setImage(with: resource)
         
         // Configure the cell
         return cell
@@ -142,7 +142,7 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     {
         spinner.stopAnimating()
         
-        self.photos = viewModel.photos
+        self.presentedPhotos = viewModel.photos
         
         self.collectionView?.reloadData()
     }

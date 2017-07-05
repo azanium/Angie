@@ -25,7 +25,7 @@ protocol GalleryDataStore
 class GalleryInteractor: GalleryBusinessLogic, GalleryDataStore
 {
     var presenter: GalleryPresentationLogic?
-    var worker: GalleryWorker?
+    var worker = GalleryWorker()
     
     var photos: [FlickrPhoto] = []
     
@@ -33,8 +33,7 @@ class GalleryInteractor: GalleryBusinessLogic, GalleryDataStore
     
     func fetchPhotos(request: Gallery.Photo.Request)
     {
-        worker = GalleryWorker()
-        worker?.fetchPhotos(completionHandler: { (success, photos) in
+        worker.fetchPhotos(completionHandler: { (success, photos) in
             
             self.photos = photos
             
