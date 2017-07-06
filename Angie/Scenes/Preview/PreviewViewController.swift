@@ -162,7 +162,7 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
         }))
         
         actionController.addAction(Action("Open in a browser", style: .default, handler: { action in
-            if let url = URL(string: self.displayedPhoto.link) {
+            if let url = URL(string: self.displayedPhoto.media.h) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }))
