@@ -33,7 +33,7 @@ class GalleryWorker
                     
                     let json = JSON(jsonValue)
                     
-                    
+                    // Check if the status of the api is fail or not, if it is then do not process the json further
                     if let stat = json["stat"].string {
                         if stat == "fail" {
                             completionHandler?(false, [])
@@ -61,6 +61,8 @@ class GalleryWorker
                                 
                             if let m = media["m"].string {
                                 fMedia.m = m
+                                
+                                // Due to the nature of flickr, we use postfix _h for high resolution
                                 fMedia.h = m.replacingOccurrences(of: "_m", with: "_h")
                             }
                             photo.media = fMedia
@@ -79,8 +81,15 @@ class GalleryWorker
                             }
                             
                             if let author = item["author"].string {
+                                // The format for author is: email ("name")
+                                // So we need to get only the name
+                                // split the string into 3 parts
                                 let authors = author.components(separatedBy: "\"")
+                                
+                                // We get the middle part of the splitted author name
                                 let formattedAuthor = authors.count > 1 ? authors[1] : author
+                                
+                                // Replace special character with blank
                                 photo.author = formattedAuthor.replacingOccurrences(of: "\\", with: "")
                             }
                             

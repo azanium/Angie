@@ -22,8 +22,13 @@ class PhotoCell: UICollectionViewCell {
     }
 
     func setupUI() {
+        // We want the image to fill the boundary so it will look nice and balance in the photo card
         self.photoImageView.contentMode = .scaleAspectFill
+        
+        // Mask the image to bound, so it will not fill over the boundary
         self.photoImageView.layer.masksToBounds = true
+        
+        // Give shadow to the content, so it will look nicer
         self.applyShadow(view: self.contentView)
     }
     

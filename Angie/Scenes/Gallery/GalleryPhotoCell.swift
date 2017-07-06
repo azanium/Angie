@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Photo Cell v1, use this if we are not using metadata
 class GalleryPhotoCell: UICollectionViewCell {
     
     @IBOutlet weak var photoView: UIImageView!

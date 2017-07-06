@@ -130,7 +130,8 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
         
         cell.authorLabel.text = photo.author
         cell.locationLabel.text = photo.title
-        cell.tagsLabel.text = photo.tags.replacingOccurrences(of: " ", with: " #")
+        let tags = photo.tags.characters.count > 0 ? "#\(photo.tags)" : photo.tags
+        cell.tagsLabel.text = tags.replacingOccurrences(of: " ", with: " #")
         
         // Configure the cell
         return cell
