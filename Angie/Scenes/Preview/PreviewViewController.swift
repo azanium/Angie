@@ -102,11 +102,17 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
     func displayPhoto(viewModel: Preview.Photo.ViewModel)
     {
         self.displayedPhoto = viewModel.photo
-        let url = URL(string: self.displayedPhoto.media.m)!
+        let url = URL(string: self.displayedPhoto.media.h)!
         
-        let resource = ImageResource(downloadURL: url, cacheKey: self.displayedPhoto.media.m)
+        let resource = ImageResource(downloadURL: url, cacheKey: self.displayedPhoto.media.h)
         previewImageView.kf.indicatorType = .activity
-        previewImageView.kf.setImage(with: resource)
+        previewImageView.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil) { (image, error, cacheType, url) in
+            // Shall we do some post fx here?
+        }
+    }
+    
+    func getImageMetadata(image: UIImage) {
+        
     }
     
     // Save preview image into album

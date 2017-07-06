@@ -28,10 +28,11 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     // MARK: MemVars & Properties
     
     private let cellIdentifier = "Cell"
+    private let photoCellIdentifier = "photoCell"
     
     // Photos and Gallery margins
-    fileprivate let photosPerRow: CGFloat = 3
-    fileprivate let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    fileprivate let photosPerRow: CGFloat = 1
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     
     private let spinner = ALThreeCircleSpinner(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
     var displayedPhotos = [FlickrPhoto]()
@@ -69,7 +70,8 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     
     // Setup the spinner for loading indicator here
     private func setupUI() {
-        collectionView?.addSubview(spinner)
+        self.collectionView?.backgroundColor = UIColor.black
+        self.view.addSubview(spinner)
         spinner.snp.remakeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
@@ -78,6 +80,8 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
         }
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(loadPhotos))
+        
+        self.collectionView?.register(UINib(nibName: "PhotoCell", bundle: nil), forCellWithReuseIdentifier: self.photoCellIdentifier)
     }
     
     // MARK: Routing
@@ -114,15 +118,19 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GalleryPhotoCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: photoCellIdentifier, for: indexPath) as! PhotoCell
         
         let photo = self.displayedPhotos[indexPath.row]
         
         let url = URL(string: photo.media.m)!
         
         let resource = ImageResource(downloadURL: url, cacheKey: photo.media.m)
-        cell.photoView.kf.indicatorType = .activity
-        cell.photoView.kf.setImage(with: resource)
+        cell.photoImageView.kf.indicatorType = .activity
+        cell.photoImageView.kf.setImage(with: resource)
+        
+        cell.authorLabel.text = photo.author
+        cell.locationLabel.text = photo.title
+        cell.tagsLabel.text = photo.tags.replacingOccurrences(of: " ", with: " #")
         
         // Configure the cell
         return cell

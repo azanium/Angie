@@ -61,11 +61,12 @@ class GalleryWorker
                                 
                             if let m = media["m"].string {
                                 fMedia.m = m
+                                fMedia.h = m.replacingOccurrences(of: "_m", with: "_h")
                             }
                             photo.media = fMedia
                             
                             
-                            if let dateTaken = item["date_taken"].string {
+                            if let _ = item["date_taken"].string {
                                 
                             }
                             
@@ -73,12 +74,14 @@ class GalleryWorker
                                 photo.description = desc
                             }
                             
-                            if let published = item["published"].string {
+                            if let _ = item["published"].string {
                                 //photo.published = published
                             }
                             
                             if let author = item["author"].string {
-                                photo.author = author
+                                let authors = author.components(separatedBy: "\"")
+                                let formattedAuthor = authors.count > 1 ? authors[1] : author
+                                photo.author = formattedAuthor.replacingOccurrences(of: "\\", with: "")
                             }
                             
                             if let authorId = item["author_id"].string {
