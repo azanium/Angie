@@ -18,3 +18,8 @@ http://nvie.com/posts/a-successful-git-branching-model/
 * Framework dependency manager using Cocoapods
 * HTTP framework using Alamofire 4.4
 * Image Cache framework using Kingfisher
+* Image metadata on gallery
+* Search images by tag
+* Save image to photo library (system)
+* Open image in system browser
+* Share picture by email
