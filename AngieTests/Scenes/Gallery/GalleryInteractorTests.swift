@@ -55,7 +55,7 @@ class GalleryInteractorTests: XCTestCase
         
         typealias GalleryFetchPhotosHandler = (Bool, [FlickrPhoto])->Void
         
-        override func fetchPhotos(completionHandler: GalleryFetchPhotosHandler?){
+        override func fetchPhotos(_ tags: String, completionHandler: GalleryFetchPhotosHandler?){
             fetchPhotosCalled = true
             completionHandler?(true, [])
         }
@@ -72,7 +72,7 @@ class GalleryInteractorTests: XCTestCase
         sut.worker = galleryWorkerSpy
         
         // When
-        let request = Gallery.Photo.Request()
+        let request = Gallery.Photo.Request(tags: "")
         sut.fetchPhotos(request: request)
         
         // Then
