@@ -18,9 +18,12 @@ class GalleryWorker
 {
     typealias GalleryFetchPhotosHandler = (Bool, [FlickrPhoto])->Void
     
-    func fetchPhotos(completionHandler: GalleryFetchPhotosHandler?)
+    func fetchPhotos(_ tags: String, completionHandler: GalleryFetchPhotosHandler?)
     {
-        let apiUrl = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tagmode=any"
+        
+        let apiUrl = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tagmode=any&tags=\(tags)"
+        
+        print("# Requesting: \(apiUrl) ")
         
         request(apiUrl,
                 method: .get,

@@ -66,6 +66,7 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
     {
         self.navigationItem.backBarButtonItem?.title = ""
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: self, action: #selector(showActions))
+        self.view.backgroundColor = UIColor.black
     }
     
     // MARK: Routing
@@ -106,6 +107,8 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
         
         let resource = ImageResource(downloadURL: url, cacheKey: self.displayedPhoto.media.h)
         previewImageView.kf.indicatorType = .activity
+        (previewImageView.kf.indicator?.view as? UIActivityIndicatorView)?.activityIndicatorViewStyle = .whiteLarge
+        
         previewImageView.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil) { (image, error, cacheType, url) in
             // Shall we do some post fx here?
         }

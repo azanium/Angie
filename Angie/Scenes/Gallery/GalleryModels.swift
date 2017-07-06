@@ -20,7 +20,7 @@ enum Gallery
     {
         struct Request
         {
-            
+            var tags: String
         }
         
         struct Response

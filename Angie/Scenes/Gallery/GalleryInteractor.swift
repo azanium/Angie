@@ -33,7 +33,7 @@ class GalleryInteractor: GalleryBusinessLogic, GalleryDataStore
     
     func fetchPhotos(request: Gallery.Photo.Request)
     {
-        worker.fetchPhotos(completionHandler: { (success, photos) in
+        worker.fetchPhotos(request.tags, completionHandler: { (success, photos) in
             
             self.photos = photos
             

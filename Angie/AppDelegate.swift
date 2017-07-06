@@ -16,9 +16,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // This is for navigation bar title to white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        
+        let barColor = UIColor(hex: "#727373")
+        UINavigationBar.appearance().barTintColor = barColor
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = UIColor.white
+        //self.navigationController?.navigationBar.barStyle = .blackTranslucent
+        UINavigationBar.appearance().isTranslucent = true
+        
+        
         return true
     }
 
+    // We only support portrait for gallery for now, since we still havent handle multi res UI
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        let rootVC = self.window?.rootViewController
+        if rootVC is UINavigationController {
+            let childVC = rootVC?.childViewControllers[0]
+            if childVC is GalleryViewController {
+                return UIInterfaceOrientationMask.portrait
+            }
+            
+        }
+        return UIInterfaceOrientationMask.all
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

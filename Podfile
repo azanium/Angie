@@ -15,6 +15,7 @@ target 'Angie' do
   pod 'ALThreeCircleSpinner'
   pod 'XLActionController'
   pod 'BtownToolkit'
+  pod 'Hue'
   pod 'DGElasticPullToRefresh', :git => 'https://github.com/azanium/DGElasticPullToRefresh.git', :branch => 'master'
 
   target 'AngieTests' do

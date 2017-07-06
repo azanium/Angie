@@ -14,6 +14,7 @@ import UIKit
 import ALThreeCircleSpinner
 import SnapKit
 import Kingfisher
+import Hue
 
 protocol GalleryDisplayLogic: class
 {
@@ -33,6 +34,10 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     // Photos and Gallery margins
     fileprivate let photosPerRow: CGFloat = 1
     fileprivate let sectionInsets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+    fileprivate var searchBar: UISearchBar!
+    fileprivate var cancelSearchButton: UIBarButtonItem!
+    fileprivate var searchButton: UIBarButtonItem!
+    fileprivate var searchText: String = ""
     
     private let spinner = ALThreeCircleSpinner(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
     var displayedPhotos = [FlickrPhoto]()
@@ -70,7 +75,12 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     
     // Setup the spinner for loading indicator here
     private func setupUI() {
+        
+        // Register our cell and other setups regarding collection view
         self.collectionView?.backgroundColor = UIColor.black
+        self.collectionView?.register(UINib(nibName: "PhotoCell", bundle: nil), forCellWithReuseIdentifier: self.photoCellIdentifier)
+        
+        // Setup loading spinner
         self.view.addSubview(spinner)
         spinner.snp.remakeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -79,9 +89,11 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
             make.height.equalTo(44)
         }
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(loadPhotos))
+        // Prepare search related UI
+        prepareSearchUI()
         
-        self.collectionView?.register(UINib(nibName: "PhotoCell", bundle: nil), forCellWithReuseIdentifier: self.photoCellIdentifier)
+        // Setup navigation bar
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(refreshAction))
     }
     
     // MARK: Routing
@@ -145,11 +157,16 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     
     // MARK: Gallery Events
     
-    func loadPhotos()
+    func refreshAction()
+    {
+        loadPhotos()
+    }
+    
+    func loadPhotos(_ tags: String = "")
     {
         spinner.startAnimating()
         
-        let request = Gallery.Photo.Request()
+        let request = Gallery.Photo.Request(tags: tags)
         interactor?.fetchPhotos(request: request)
     }
     
@@ -192,5 +209,56 @@ extension GalleryViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
         return sectionInsets.left
+    }
+}
+
+// Search related extension
+
+extension GalleryViewController : UISearchBarDelegate {
+    
+    func prepareSearchUI() {
+        searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleSearchAction))
+        
+        searchBar = UISearchBar()
+        searchBar.delegate = self
+        searchBar.placeholder = "Search your tags"
+        
+        self.navigationItem.rightBarButtonItem = searchButton
+    }
+    
+    func handleSearchAction() {
+        if let _ = self.navigationItem.titleView {
+            self.navigationItem.titleView = nil
+        }
+        else {
+            self.navigationItem.titleView = searchBar
+            searchBar.becomeFirstResponder()
+        }
+    }
+    
+    func handleCancelSearchAction() {
+        
+    }
+    
+    // MARK: - Search Bar delegate
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("tag search: \(searchText)")
+        self.searchText = searchText
+        
+        // Do not reload immediately, it will become slow
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+            self.loadSearch(tags: searchText)
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.loadSearch(tags: self.searchText)
+        self.searchBar.resignFirstResponder()
+    }
+    
+    func loadSearch(tags: String) {
+        let search = tags.replacingOccurrences(of: " ", with: ", ")
+        self.loadPhotos(search.lowercased())
     }
 }
