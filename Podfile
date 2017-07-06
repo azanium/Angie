@@ -13,14 +13,10 @@ target 'Angie' do
   pod 'SCLAlertView'
   pod 'SwiftyJSON'
   pod 'ALThreeCircleSpinner'
+  pod 'XLActionController'
   pod 'DGElasticPullToRefresh', :git => 'https://github.com/azanium/DGElasticPullToRefresh.git', :branch => 'master'
 
   target 'AngieTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'AngieUITests' do
     inherit! :search_paths
     # Pods for testing
   end

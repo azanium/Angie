@@ -12,6 +12,8 @@
 
 import UIKit
 import Kingfisher
+import XLActionController
+import MessageUI
 
 protocol PreviewDisplayLogic: class
 {
@@ -60,6 +62,12 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
         router.dataStore = interactor
     }
     
+    private func setupUI()
+    {
+        self.navigationItem.backBarButtonItem?.title = ""
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: self, action: #selector(showActions))
+    }
+    
     // MARK: Routing
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -77,6 +85,8 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        setupUI()
         
         loadPhoto()
     }
@@ -97,5 +107,88 @@ class PreviewViewController: UIViewController, PreviewDisplayLogic
         let resource = ImageResource(downloadURL: url, cacheKey: self.displayedPhoto.media.m)
         previewImageView.kf.indicatorType = .activity
         previewImageView.kf.setImage(with: resource)
+    }
+    
+    // Save preview image into album
+    func saveImageToAlbum()
+    {
+        if let _ = self.previewImageView, let image = self.previewImageView.image {
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        }
+    }
+
+    // Send picture via email
+    func sendImageToEmail()
+    {
+        if MFMailComposeViewController.canSendMail(), let _ = previewImageView, let image = previewImageView.image {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self;
+            
+            // Localized our subject and message for multilingual support
+            mail.setSubject(NSLocalizedString("Your awesome photo", comment: ""))
+            mail.setMessageBody(NSLocalizedString("Angie send you this awesome photo from Flickr", comment: ""), isHTML: false)
+
+            // Attach our image to the mail compose controller
+            if let imageData = UIImagePNGRepresentation(image) {
+                mail.addAttachmentData(imageData, mimeType: "image/png", fileName: "imageName")
+            }
+            
+            self.present(mail, animated: true, completion: nil)
+        }
+        else {
+            let ac = UIAlertController(title: "Oops", message: "Unable to share", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
+    
+    // MARK: - Action
+    
+    func showActions()
+    {
+        let actionController = SkypeActionController()
+        
+        actionController.addAction(Action("Save Image", style: .default, handler: { action in
+            self.saveImageToAlbum()
+        }))
+        
+        actionController.addAction(Action("Open in a browser", style: .default, handler: { action in
+            if let url = URL(string: self.displayedPhoto.link) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }))
+        
+        actionController.addAction(Action("Share via Email", style: .default, handler: { action in
+            
+            self.sendImageToEmail()
+            
+        }))
+        
+        actionController.addAction(Action("Cancel", style: .cancel, handler: nil))
+        
+        present(actionController, animated: true, completion: nil)
+    }
+    
+    // MARK: - Delegates 
+    
+    func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your image has been saved to your photo library.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
+}
+
+// Handle delegate for MFMailComposeViewControllerDelegate
+
+extension PreviewViewController : MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

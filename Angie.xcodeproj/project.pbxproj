@@ -13,6 +13,8 @@
 		C1717C041F0D3F40008BCE17 /* PreviewInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1717C001F0D3F40008BCE17 /* PreviewInteractorTests.swift */; };
 		C1717C051F0D3F40008BCE17 /* PreviewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1717C011F0D3F40008BCE17 /* PreviewPresenterTests.swift */; };
 		C1717C061F0D3F40008BCE17 /* PreviewViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1717C021F0D3F40008BCE17 /* PreviewViewControllerTests.swift */; };
+		C1717C141F0DE52A008BCE17 /* Skype.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1717C121F0DE52A008BCE17 /* Skype.swift */; };
+		C1717C151F0DE52A008BCE17 /* SkypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1717C131F0DE52A008BCE17 /* SkypeCell.xib */; };
 		C1970C841F0B5858001ECDFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1970C831F0B5858001ECDFE /* AppDelegate.swift */; };
 		C1970C891F0B5858001ECDFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1970C871F0B5858001ECDFE /* Main.storyboard */; };
 		C1970C8B1F0B5858001ECDFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1970C8A1F0B5858001ECDFE /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		C1717C001F0D3F40008BCE17 /* PreviewInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewInteractorTests.swift; path = Preview/PreviewInteractorTests.swift; sourceTree = "<group>"; };
 		C1717C011F0D3F40008BCE17 /* PreviewPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewPresenterTests.swift; path = Preview/PreviewPresenterTests.swift; sourceTree = "<group>"; };
 		C1717C021F0D3F40008BCE17 /* PreviewViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewViewControllerTests.swift; path = Preview/PreviewViewControllerTests.swift; sourceTree = "<group>"; };
+		C1717C121F0DE52A008BCE17 /* Skype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Skype.swift; path = Common/Components/SkypeActionController/Skype.swift; sourceTree = "<group>"; };
+		C1717C131F0DE52A008BCE17 /* SkypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SkypeCell.xib; path = Common/Components/SkypeActionController/SkypeCell.xib; sourceTree = "<group>"; };
 		C1970C801F0B5858001ECDFE /* Angie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Angie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1970C831F0B5858001ECDFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1970C881F0B5858001ECDFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +142,23 @@
 			name = Preview;
 			sourceTree = "<group>";
 		};
+		C1717C081F0DE058008BCE17 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C1717C091F0DE06A008BCE17 /* SkypeActionController */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		C1717C091F0DE06A008BCE17 /* SkypeActionController */ = {
+			isa = PBXGroup;
+			children = (
+				C1717C121F0DE52A008BCE17 /* Skype.swift */,
+				C1717C131F0DE52A008BCE17 /* SkypeCell.xib */,
+			);
+			name = SkypeActionController;
+			sourceTree = "<group>";
+		};
 		C1970C771F0B5858001ECDFE = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +215,7 @@
 		C1970CB21F0BF528001ECDFE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C1717C081F0DE058008BCE17 /* Components */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -350,6 +372,7 @@
 			files = (
 				C1970C8E1F0B5858001ECDFE /* LaunchScreen.storyboard in Resources */,
 				C1970C8B1F0B5858001ECDFE /* Assets.xcassets in Resources */,
+				C1717C151F0DE52A008BCE17 /* SkypeCell.xib in Resources */,
 				C1970C891F0B5858001ECDFE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +494,7 @@
 				C1970CEE1F0CBE1A001ECDFE /* FlickrMedia.swift in Sources */,
 				C1970D121F0D1C4F001ECDFE /* PreviewRouter.swift in Sources */,
 				C1970D141F0D1C4F001ECDFE /* PreviewViewController.swift in Sources */,
+				C1717C141F0DE52A008BCE17 /* Skype.swift in Sources */,
 				C1970CDC1F0BF5E8001ECDFE /* GalleryRouter.swift in Sources */,
 				C1970D161F0D1C4F001ECDFE /* PreviewWorker.swift in Sources */,
 				C1970CE61F0CBD95001ECDFE /* FlickrPhoto.swift in Sources */,

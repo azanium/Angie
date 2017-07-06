@@ -68,7 +68,7 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     }
     
     // Setup the spinner for loading indicator here
-    private func setupSpinner() {
+    private func setupUI() {
         collectionView?.addSubview(spinner)
         spinner.snp.remakeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -76,6 +76,8 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
             make.width.equalTo(44)
             make.height.equalTo(44)
         }
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(loadPhotos))
     }
     
     // MARK: Routing
@@ -96,7 +98,7 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     {
         super.viewDidLoad()
         
-        setupSpinner()
+        setupUI()
         
         loadPhotos()
     }
@@ -148,9 +150,16 @@ class GalleryViewController: UICollectionViewController, GalleryDisplayLogic
     {
         spinner.stopAnimating()
         
-        self.displayedPhotos = viewModel.photos
-        
-        self.collectionView?.reloadData()
+        // If we failed to load the first time, retry it
+        if viewModel.photos.count == 0 {
+            self.loadPhotos()
+        }
+        else {
+            print("photos: \(viewModel.photos)")
+            self.displayedPhotos = viewModel.photos
+            
+            self.collectionView?.reloadData()
+        }
     }
 }
 
